@@ -1,0 +1,15 @@
+version: 0.2
+phases:
+  install:
+    commands:
+      - pip install cfn-lint taskcat
+  build:
+    commands:
+      - cfn-lint template.yaml             # Kiểm tra cú pháp template
+      - taskcat test run                   # Kiểm tra template với Taskcat
+artifacts:
+  files:
+    - template.yaml                       # Bao gồm file template
+    - .taskcat.yml                        # Bao gồm cấu hình Taskcat
+  name: Lab2Artifact                      # Tên artifact được tạo ra
+  discard-paths: no                       # Giữ nguyên cấu trúc file gốc

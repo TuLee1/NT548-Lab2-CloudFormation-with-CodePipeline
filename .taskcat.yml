@@ -1,0 +1,12 @@
+project:
+  name: devops-cau2
+  regions:
+    - us-east-1
+tests:
+  default:
+    template: ./template.yaml
+    parameters:
+      VpcCIDR: 10.0.0.0/16
+      SubnetCIDR: 10.0.1.0/24
+      InstanceType: t2.micro
+      KeyName: ec2keypair
